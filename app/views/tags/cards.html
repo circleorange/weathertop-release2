@@ -1,0 +1,46 @@
+<div class="ui five column grid">
+  <div class="column">
+    <div class="ui card">
+      <div class="content">
+        <div class="header">${_station.name}</div>
+        <div class="description"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui card">
+      <div class="content">
+        <div class="header">Weather</div>
+        <div class="description">${_station.getLatestReading().weatherType}</div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui card">
+      <div class="content">
+        <h3 class="ui header">Temperature</h3>
+        <div class="description">${_station.getLatestReading().temperature} C</div>
+        <div class="description">${_station.getLatestReading().tempFahrenheit} F</div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui card">
+      <div class="content">
+        <div class="header">Wind</div>
+        <div class="description">${_station.getLatestReading().beaufortScale} bft</div>
+        <div class="description">${_station.getLatestReading().compassDirection}</div>
+        <div class="description">Feels like ${_station.getLatestReading().beaufortLabel}</div>
+        <div class="description">${_station.getLatestReading()?.windChill?.round(2)}</div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui card">
+      <div class="content">
+        <div class="header">Pressure</div>
+        <div class="description">${_station.getLatestReading().pressure} hpa</div>
+      </div>
+    </div>
+  </div>
+</div>

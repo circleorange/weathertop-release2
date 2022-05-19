@@ -1,0 +1,15 @@
+## To Do ##
+(y) Create field Wind direction in Reading
+(y) Create fields Wind Chill and Wind Compass in Station
+(y) Create conversion methods for the fields
+    (-) Improvement: Refactor conversion methods to return two values for e.g. beaufortScale and beaufortLabel
+(y) Display the new fields on the Dashboard
+    (-) Improvement: Reformat wind chill. Currently, If 6.80 -> Displays 6.8
+(y) Change Dashboard to shows station list (Playlist9b)
+(y) Add button to open each station (Playlist10b)
+    (y) Add routes for accessing station
+    (y) Add delete button to remove readings
+    (y) Add button to create new readings
+(y) Add button to create new Station
+    (-) Handle errors with new stations having null values upon creation
+(y) Create Github repository
