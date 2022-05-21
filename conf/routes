@@ -15,6 +15,12 @@ GET     /stations/{id}/deletereading/{readingid}    StationControl.deleteReading
 POST    /dashboard/addstation                       Dashboard.addStation
 GET     /dashboard/deletestation/{id}               Dashboard.deleteStation
 
+GET     /signup                                     Accounts.signup
+GET     /login                                      Accounts.login
+POST    /register                                   Accounts.register
+POST    /authenticate                               Accounts.authenticate
+GET     /logout                                     Accounts.logout
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

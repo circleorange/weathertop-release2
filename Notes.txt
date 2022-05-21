@@ -1,4 +1,4 @@
-## To Do ##
+##Release 1##
 (y) Create field Wind direction in Reading
 (y) Create fields Wind Chill and Wind Compass in Station
 (y) Create conversion methods for the fields
@@ -13,3 +13,29 @@
 (y) Add button to create new Station
     (-) Handle errors with new stations having null values upon creation
 (y) Create Github repository
+
+##Release 2##
+(-) Include Latitude and Longitude for Station
+    (-) Add extra fields to station creation form
+(-) Calculate and display Min Max temperature, wind speed, and pressure values
+(-) Implement member class
+    (y) Create fields for name, email, password, station
+    (y) Members can sign up or log in
+    (-) Members can create stations on their account
+(-) Improve design
+    (-) Card Icons
+    (-) Fix cards not equal length
+(-) Application deployed
+
+##Release 3## (labs 12 a,b,c)
+(-) Include the submission time and date of the readings
+(-) Include trends for 3 consecutive readings for
+    (-) Temperature
+    (-) Wind Speed
+    (-) Pressure
+(-) Display cards on the Dashboard page
+(-) Add functionality for members to edit their personal details
+(-) Stations are listed alphabetically
+(-) Github repo
+(-) Deployed
+(-) History tags

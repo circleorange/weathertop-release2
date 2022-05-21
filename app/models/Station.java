@@ -6,23 +6,26 @@ import utils.Conversions;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Station extends Model {
   public String name;
+  public double latitude;
+  public double longitude;
   @OneToMany(cascade = CascadeType.ALL)
   public List<Reading> readings = new ArrayList<Reading>();
-  //public String weatherType;
 
 
   // Constructor
-  public Station(String stationName) { this.name = stationName; }
+  public Station(String stationName, double latitude, double longitude) {
+    this.name = stationName;
+    this.latitude = latitude;
+    this.longitude = longitude;
+  }
 
   // Get the latest readings
-  public Reading getLatestReading() {
-    //reading = Reading.findAll();
+  public Reading getLatestReadings() {
     Reading latestReading = null;
     if (readings.size() != 0) {
       latestReading = readings.get(readings.size() - 1);
@@ -35,4 +38,14 @@ public class Station extends Model {
     }
     return latestReading;
   }
+
+  double maxTemp = 0.0;
+  
+  public void getMaxReadings() {
+    Reading maxTemp = Collections.max(readings, Comparator.comparing(reading -> reading.temperature));
+    Reading
+  }
+  /*public double maxTemp() {
+    return Reading.maxTemp = Collections.max(readings, Comparator.comparing(reading -> reading.temperature));
+  }*/
 }

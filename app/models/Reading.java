@@ -17,6 +17,7 @@ public class Reading extends Model {
   public static String beaufortLabel;
   public static String compassDirection;
   public static double windChill;
+  //public static double maxTemp;
 
   // Constructor
   public Reading(int code, double temp, double windSpeed, int windDirection, int pressure) {
@@ -26,4 +27,6 @@ public class Reading extends Model {
     this.windDirection = windDirection;
     this.pressure = pressure;
   }
+
+
 }

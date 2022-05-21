@@ -3,7 +3,8 @@
     <div class="ui card">
       <div class="content">
         <div class="header">${_station.name}</div>
-        <div class="description"></div>
+        <div class="description">Lat: ${_station.latitude}</div>
+        <div class="description">Lng: ${_station.longitude}</div>
       </div>
     </div>
   </div>
@@ -11,7 +12,7 @@
     <div class="ui card">
       <div class="content">
         <div class="header">Weather</div>
-        <div class="description">${_station.getLatestReading().weatherType}</div>
+        <div class="description">${_station.getLatestReadings().weatherType}</div>
       </div>
     </div>
   </div>
@@ -19,8 +20,8 @@
     <div class="ui card">
       <div class="content">
         <h3 class="ui header">Temperature</h3>
-        <div class="description">${_station.getLatestReading().temperature} C</div>
-        <div class="description">${_station.getLatestReading().tempFahrenheit} F</div>
+        <div class="description">${_station.getLatestReadings().temperature} C</div>
+        <div class="description">${_station.getLatestReadings().tempFahrenheit} F</div>
       </div>
     </div>
   </div>
@@ -28,10 +29,10 @@
     <div class="ui card">
       <div class="content">
         <div class="header">Wind</div>
-        <div class="description">${_station.getLatestReading().beaufortScale} bft</div>
-        <div class="description">${_station.getLatestReading().compassDirection}</div>
-        <div class="description">Feels like ${_station.getLatestReading().beaufortLabel}</div>
-        <div class="description">${_station.getLatestReading()?.windChill?.round(2)}</div>
+        <div class="description">${_station.getLatestReadings().beaufortScale} bft</div>
+        <div class="description">${_station.getLatestReadings().compassDirection}</div>
+        <div class="description">Feels like ${_station.getLatestReadings().beaufortLabel}</div>
+        <div class="description">${_station.getLatestReadings()?.windChill?.round(2)}</div>
       </div>
     </div>
   </div>
@@ -39,7 +40,7 @@
     <div class="ui card">
       <div class="content">
         <div class="header">Pressure</div>
-        <div class="description">${_station.getLatestReading().pressure} hpa</div>
+        <div class="description">${_station.getLatestReadings().pressure} hpa</div>
       </div>
     </div>
   </div>
