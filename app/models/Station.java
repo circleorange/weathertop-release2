@@ -39,13 +39,57 @@ public class Station extends Model {
     return latestReading;
   }
 
-  double maxTemp = 0.0;
-  
-  public void getMaxReadings() {
-    Reading maxTemp = Collections.max(readings, Comparator.comparing(reading -> reading.temperature));
-    Reading
+  public double maxTemperature() {
+    if (readings.size() == 0) { return 999.99; }
+    Reading maxTemperature = readings.get(0);
+    for (Reading reading : readings) {
+      if (reading.temperature > maxTemperature.temperature) { maxTemperature = reading; }
+    }
+    return maxTemperature.temperature;
   }
-  /*public double maxTemp() {
-    return Reading.maxTemp = Collections.max(readings, Comparator.comparing(reading -> reading.temperature));
-  }*/
+
+  public double minTemperature() {
+    if (readings.size() == 0) { return 0.01; }
+    Reading minTemperature = readings.get(0);
+    for (Reading reading : readings) {
+      if (reading.temperature < minTemperature.temperature) { minTemperature = reading; }
+    }
+    return minTemperature.temperature;
+  }
+
+  public double maxWindSpeed() {
+    if (readings.size() == 0) { return 999.99; }
+    Reading maxWindSpeed = readings.get(0);
+    for (Reading reading : readings) {
+      if (reading.windSpeed > maxWindSpeed.windSpeed) { maxWindSpeed = reading; }
+    }
+    return maxWindSpeed.windSpeed;
+  }
+
+  public double minWindSpeed() {
+    if (readings.size() == 0) { return 0.01; }
+    Reading minWindSpeed = readings.get(0);
+    for (Reading reading : readings) {
+      if (reading.windSpeed < minWindSpeed.windSpeed) { minWindSpeed = reading; }
+    }
+    return minWindSpeed.windSpeed;
+  }
+
+  public int maxPressure() {
+    if (readings.size() == 0) { return 999; }
+    Reading maxPressure = readings.get(0);
+    for (Reading reading : readings) {
+      if (reading.pressure > maxPressure.pressure) { maxPressure = reading; }
+    }
+    return maxPressure.pressure;
+  }
+
+  public int minPressure() {
+    if (readings.size() == 0) { return 0; }
+    Reading minPressure = readings.get(0);
+    for (Reading reading : readings) {
+      if (reading.pressure < minPressure.pressure) { minPressure = reading; }
+    }
+    return minPressure.pressure;
+  }
 }

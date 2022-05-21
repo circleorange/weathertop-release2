@@ -15,9 +15,9 @@
 (y) Create Github repository
 
 ##Release 2##
-(-) Include Latitude and Longitude for Station
-    (-) Add extra fields to station creation form
-(-) Calculate and display Min Max temperature, wind speed, and pressure values
+(y) Include Latitude and Longitude for Station
+    (y) Add extra fields to station creation form
+(y) Calculate and display Min Max temperature, wind speed, and pressure values
 (-) Implement member class
     (y) Create fields for name, email, password, station
     (y) Members can sign up or log in
@@ -39,3 +39,7 @@
 (-) Github repo
 (-) Deployed
 (-) History tags
+
+##Patches##
+(-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
+(-) Removing all readings in station leads to Handle NullPointerException

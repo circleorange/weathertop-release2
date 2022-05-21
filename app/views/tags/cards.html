@@ -22,6 +22,8 @@
         <h3 class="ui header">Temperature</h3>
         <div class="description">${_station.getLatestReadings().temperature} C</div>
         <div class="description">${_station.getLatestReadings().tempFahrenheit} F</div>
+        <div class="description">Max: ${_station.maxTemperature()} C</div>
+        <div class="description">Min: ${_station.minTemperature()} C</div>
       </div>
     </div>
   </div>
@@ -32,7 +34,9 @@
         <div class="description">${_station.getLatestReadings().beaufortScale} bft</div>
         <div class="description">${_station.getLatestReadings().compassDirection}</div>
         <div class="description">Feels like ${_station.getLatestReadings().beaufortLabel}</div>
-        <div class="description">${_station.getLatestReadings()?.windChill?.round(2)}</div>
+        <div class="description">Wind chill: ${_station.getLatestReadings()?.windChill?.round(1)}</div>
+        <div class="description">Max: ${_station.maxWindSpeed()} km/h</div>
+        <div class="description">Min: ${_station.minWindSpeed()} km/h</div>
       </div>
     </div>
   </div>
@@ -41,6 +45,8 @@
       <div class="content">
         <div class="header">Pressure</div>
         <div class="description">${_station.getLatestReadings().pressure} hpa</div>
+        <div class="description">Max: ${_station.maxPressure()} hpa</div>
+        <div class="description">Min: ${_station.minPressure()} hpa</div>
       </div>
     </div>
   </div>
