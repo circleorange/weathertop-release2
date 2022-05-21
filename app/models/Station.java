@@ -30,7 +30,7 @@ public class Station extends Model {
     if (readings.size() != 0) {
       latestReading = readings.get(readings.size() - 1);
       Reading.tempFahrenheit = Conversions.toFahrenheit(latestReading.temperature);
-      Reading.weatherType = Conversions.toWeatherLabel(latestReading.code);
+      Reading.weatherLabel = Conversions.toWeatherLabel(latestReading.code);
       Reading.beaufortScale = Conversions.toBeaufortScale(latestReading.windSpeed);
       Reading.beaufortLabel = Conversions.toBeaufortLabel(Reading.beaufortScale);
       Reading.compassDirection = Conversions.toCompassDirection(latestReading.windDirection);
@@ -38,6 +38,18 @@ public class Station extends Model {
     }
     return latestReading;
   }
+
+  /*
+  // Hash map to link weatherLabel with suitable icon
+  public HashMap<String, String> toWeatherIcon;
+  public void weatherIconMap() {
+    toWeatherIcon.put("Rain", "umbrella icon");
+  }
+
+  public String getWeatherIcon() {
+    weatherIconMap();
+    return toWeatherIcon.get(Reading.weatherLabel);
+  }*/
 
   public double maxTemperature() {
     if (readings.size() == 0) { return 999.99; }

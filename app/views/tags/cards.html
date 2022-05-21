@@ -1,25 +1,34 @@
 <div class="ui five column grid">
   <div class="column">
-    <div class="ui card">
+    <div class="ui card" style="height: 100%">
       <div class="content">
-        <div class="header">${_station.name}</div>
+        <h3 class="ui header">
+          <i class="map marker icon"></i>
+          <div class="content">${_station.name}</div><hr>
+        </h3>
         <div class="description">Lat: ${_station.latitude}</div>
         <div class="description">Lng: ${_station.longitude}</div>
       </div>
     </div>
   </div>
   <div class="column">
-    <div class="ui card">
+    <div class="ui card" style="height: 100%">
       <div class="content">
-        <div class="header">Weather</div>
-        <div class="description">${_station.getLatestReadings().weatherType}</div>
+        <h3 class="ui header">
+          <i class="sun icon"></i>
+          <div class="content">Weather</div><hr>
+        </h3>
+        <div class="description">${_station.getLatestReadings().weatherLabel}</div>
       </div>
     </div>
   </div>
   <div class="column">
-    <div class="ui card">
+    <div class="ui card" style="height: 100%">
       <div class="content">
-        <h3 class="ui header">Temperature</h3>
+        <h3 class="ui header">
+          <i class="thermometer icon"></i>
+          <div class="content">Temperature</div><hr>
+        </h3>
         <div class="description">${_station.getLatestReadings().temperature} C</div>
         <div class="description">${_station.getLatestReadings().tempFahrenheit} F</div>
         <div class="description">Max: ${_station.maxTemperature()} C</div>
@@ -28,9 +37,12 @@
     </div>
   </div>
   <div class="column">
-    <div class="ui card">
+    <div class="ui card" style="height: 100%">
       <div class="content">
-        <div class="header">Wind</div>
+        <h3 class="ui header">
+          <i class="paper plane icon"></i>
+          <div class="content">Wind</div><hr>
+        </h3>
         <div class="description">${_station.getLatestReadings().beaufortScale} bft</div>
         <div class="description">${_station.getLatestReadings().compassDirection}</div>
         <div class="description">Feels like ${_station.getLatestReadings().beaufortLabel}</div>
@@ -41,9 +53,12 @@
     </div>
   </div>
   <div class="column">
-    <div class="ui card">
+    <div class="ui card" style="height: 100%">
       <div class="content">
-        <div class="header">Pressure</div>
+        <h3 class="ui header">
+          <i class="expand arrows alternate icon"></i>
+          <div class="content">Pressure</div><hr>
+        </h3>
         <div class="description">${_station.getLatestReadings().pressure} hpa</div>
         <div class="description">Max: ${_station.maxPressure()} hpa</div>
         <div class="description">Min: ${_station.minPressure()} hpa</div>

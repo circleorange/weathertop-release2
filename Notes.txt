@@ -21,9 +21,9 @@
 (-) Implement member class
     (y) Create fields for name, email, password, station
     (y) Members can sign up or log in
-    (-) Members can create stations on their account
+    (y) Members can create stations on their account
 (-) Improve design
-    (-) Card Icons
+    (y) Card Icons
     (-) Fix cards not equal length
 (-) Application deployed
 
@@ -42,4 +42,5 @@
 
 ##Patches##
 (-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
-(-) Removing all readings in station leads to Handle NullPointerException
+(-) Handle NullPointerException after removing all readings in station or accessing new station with no readings
+(-) Change weather icon depending on the code

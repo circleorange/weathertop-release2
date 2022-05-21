@@ -2,6 +2,8 @@ package utils;
 
 import models.Reading;
 
+import java.util.HashMap;
+
 public class Conversions {
   public static String toWeatherLabel(int weatherCode) {
     String weatherType = "";
@@ -81,4 +83,6 @@ public class Conversions {
     double windChill = 13.12 + 0.6215*tempC - 11.37*(Math.pow(windKM, 0.16)) + 0.3965*tempC*(Math.pow(windKM, 0.16));
     return windChill;
   }
+
+
 }

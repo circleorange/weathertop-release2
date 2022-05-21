@@ -5,11 +5,11 @@
 <section class="ui raised segment">
   #{list items:stations, as:'station'}
   <header class="ui header">${station.name}</header>
-  <a href="/stations/${station.id}" class="ui icon button">
-    <i class="icon folder"></i>
+  <a href="/stations/${station.id}" class="ui large icon button">
+    <i class="folder open icon"></i>
   </a>
   <a href="/dashboard/deletestation/${station.id}" class="ui red icon button">
-    <i class="icon trash"></i>
+    <i class="trash icon"></i>
   </a>
   <hr>
   #{/list}
