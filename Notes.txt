@@ -28,12 +28,12 @@
 (-) Application deployed
 
 ##Release 3## (labs 12 a,b,c)
-(-) Include the submission time and date of the readings
+(y) Include the submission time and date of the readings
 (-) Include trends for 3 consecutive readings for
     (-) Temperature
     (-) Wind Speed
     (-) Pressure
-(-) Display cards on the Dashboard page
+(y) Display cards on the Dashboard page
 (-) Add functionality for members to edit their personal details
 (-) Stations are listed alphabetically
 (-) Github repo

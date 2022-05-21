@@ -2,17 +2,25 @@
 #{set title:'Dashboard' /}
 #{menu id:"dashboard"/}
 
-<section class="ui raised segment">
+
   #{list items:stations, as:'station'}
-  <header class="ui header">${station.name}</header>
-  <a href="/stations/${station.id}" class="ui large icon button">
-    <i class="folder open icon"></i>
-  </a>
-  <a href="/dashboard/deletestation/${station.id}" class="ui red icon button">
-    <i class="trash icon"></i>
-  </a>
-  <hr>
-  #{/list}
+<section class="ui raised segment">
+  #{cards station: station /}
+  <div class="ui six column grid">
+    <div class="column">
+    <a href="/stations/${station.id}" class="ui icon button">
+      <i class="folder open icon"></i> Open readings
+    </a>
+    </div>
+    <div class="column">
+    <a href="/dashboard/deletestation/${station.id}" class="ui red icon button">
+      <i class="trash icon"></i> Delete station
+    </a>
+    </div>
+  </div>
+
 </section>
+  #{/list}
+
 #{addstation /}
 
