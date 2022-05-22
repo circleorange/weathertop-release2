@@ -34,11 +34,11 @@
     (-) Wind Speed
     (-) Pressure
 (y) Display cards on the Dashboard page
-(-) Add functionality for members to edit their personal details
+(y) Add functionality for members to edit their personal details
 (-) Stations are listed alphabetically
-(-) Github repo
+(y) Github repo
 (-) Deployed
-(-) History tags
+(y) History tags
 
 ##Patches##
 (-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class

@@ -37,6 +37,14 @@ public class Station extends Model {
     return latestReading;
   }
 
+  public boolean isNotEmpty() {
+    if (readings.size() == 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   public double maxTemperature() {
     if (readings.size() == 0) { return 999.99; }
     Reading maxTemperature = readings.get(0);

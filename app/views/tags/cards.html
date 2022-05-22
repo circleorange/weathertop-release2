@@ -18,7 +18,7 @@
           <i class="sun icon"></i>
           <div class="content">Weather</div><hr>
         </h3>
-        <div class="description">${_station.getLatestReadings().weatherLabel}</div>
+        <div class="description">${_station.getLatestReadings()?.weatherLabel}</div>
       </div>
     </div>
   </div>
@@ -29,8 +29,8 @@
           <i class="thermometer icon"></i>
           <div class="content">Temperature</div><hr>
         </h3>
-        <div class="description">Currently ${_station.getLatestReadings().temperature} C</div>
-        <div class="description">${_station.getLatestReadings().tempFahrenheit} F</div><hr>
+        <div class="description">Currently ${_station.getLatestReadings()?.temperature} C</div>
+        <div class="description">${_station.getLatestReadings()?.tempFahrenheit} F</div><hr>
         <div class="description">Max: ${_station.maxTemperature()} C</div>
         <div class="description">Min: ${_station.minTemperature()} C</div>
       </div>
@@ -43,9 +43,9 @@
           <i class="paper plane icon"></i>
           <div class="content">Wind</div><hr>
         </h3>
-        <div class="description">Currently ${_station.getLatestReadings().beaufortScale} bft</div>
-        <div class="description">Direction: ${_station.getLatestReadings().compassDirection}</div>
-        <div class="description">Feels like ${_station.getLatestReadings().beaufortLabel}</div>
+        <div class="description">Currently ${_station.getLatestReadings()?.beaufortScale} bft</div>
+        <div class="description">Direction: ${_station.getLatestReadings()?.compassDirection}</div>
+        <div class="description">Feels like ${_station.getLatestReadings()?.beaufortLabel}</div>
         <div class="description">Wind chill: ${_station.getLatestReadings()?.windChill?.round(1)} C</div>
         <div class="description">Max: ${_station.maxWindSpeed()} km/h</div>
         <div class="description">Min: ${_station.minWindSpeed()} km/h</div>
@@ -59,7 +59,7 @@
           <i class="expand arrows alternate icon"></i>
           <div class="content">Pressure</div><hr>
         </h3>
-        <div class="description">Currently ${_station.getLatestReadings().pressure} hpa</div><hr>
+        <div class="description">Currently ${_station.getLatestReadings()?.pressure} hpa</div><hr>
         <div class="description">Max: ${_station.maxPressure()} hpa</div>
         <div class="description">Min: ${_station.minPressure()} hpa</div>
       </div>

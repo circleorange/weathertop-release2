@@ -5,7 +5,25 @@
 
 #{list items:stations, as:'station'}
 <section class="ui raised segment">
+  #{if station.isNotEmpty()}
   #{cards station: station /}
+  #{/if}
+  #{else}
+  <div class="ui five column grid">
+    <div class="column">
+      <div class="ui card" style="height: 100%">
+        <div class="content">
+          <h3 class="ui header">
+            <i class="map marker icon"></i>
+            <div class="content">${station.name}</div><hr>
+          </h3>
+          <div class="description">Lat: ${station.latitude}</div>
+          <div class="description">Lng: ${station.longitude}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  #{/else}
   <div class="ui six column grid">
     <div class="column">
     <a href="/stations/${station.id}" class="ui icon button">
