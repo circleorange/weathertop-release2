@@ -9,7 +9,8 @@ public class Accounts extends Controller {
     Logger.info("RENDER_SETTINGS_PAGE");
     Member member = Accounts.getLoggedInUser();
     boolean updateSuccessful = false;
-    render("settings.html", member, updateSuccessful);
+    boolean updateFailed = false;
+    render("settings.html", member, updateSuccessful, updateFailed);
   }
   public static void signup() {
     Logger.info("RENDER_SIGNUP_PAGE");
@@ -52,23 +53,24 @@ public class Accounts extends Controller {
   }
 
   public void updateMember(String firstname, String lastname, String email, String password) {
-    // new page Settings with users fields
-    // allow user to change field and Save
-    // member must already exist, Save posts new information
-    // Validation
     Logger.info("ACTION_UPDATE_MEMBER_PENDING");
     Member member = Accounts.getLoggedInUser();
-    if (!firstname.equals(member.firstname) && (firstname != null)) {
+    if (!firstname.isEmpty() && !lastname.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
       member.firstname = firstname;
-    }
-    if (!lastname.equals(member.lastname) && (lastname != null)) {
       member.lastname = lastname;
-    }
-    if (!email.equals(member.email) && (email != null)) {
       member.email = email;
-    }
-    if (!password.equals(member.password) && (password != null)) {
       member.password = password;
+    } else if (firstname.isEmpty() && lastname.isEmpty() && !email.isEmpty() && password.isEmpty()) {
+      member.email = email;
+    } else if (firstname.isEmpty() && lastname.isEmpty() && email.isEmpty() && !password.isEmpty()) {
+      member.password = password;
+    } else if (!firstname.isEmpty() && !lastname.isEmpty() && email.isEmpty() && password.isEmpty()) {
+      member.firstname = firstname;
+      member.lastname = lastname;
+    } else {
+      Logger.info("ACTION_UPDATE_MEMBER_FAILED");
+      boolean updateFailed = true;
+      render("settings.html", member, updateFailed);
     }
     member.save();
     boolean updateSuccessful = true;

@@ -11,7 +11,7 @@
     (y) Add delete button to remove readings
     (y) Add button to create new readings
 (y) Add button to create new Station
-    (-) Handle errors with new stations having null values upon creation
+    (y) Handle errors with new stations having null values upon creation
 (y) Create Github repository
 
 ##Release 2##
@@ -42,10 +42,9 @@
 
 ##Patches##
 (-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
-(-) Handle NullPointerException after removing all readings in station or accessing new station with no readings
+(y) Handle NullPointerException after removing all readings in station or accessing new station with no readings
 (-) Change weather icon depending on the code
 (-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
-(-) Fix cancel button on Settings page
-(-) Handle null values during registration
-(-) Allow users to edit only one field instead of all
-(-) Add successful message for Add Station and Add Reading
+(y) Handle null values during registration
+(y) Allow users to edit only one field instead of all
+(y) Add successful and error messages for Add Station and Add Reading

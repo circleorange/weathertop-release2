@@ -2,6 +2,14 @@
 #{set title: 'Settings' /}
 #{menu id: "settings" /}
 
+#{if updateFailed}
+<div class="ui red negative message">
+  <div class="header">
+    Update Failed
+  </div>
+  <p>Updating your personal details didn't go as planned! Please fill out all the fields with correct parameters.</p>
+</div>
+#{/if}
 <div class="ui attached message">
   <div class="header">
     Hey, ${member.firstname}!

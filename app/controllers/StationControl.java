@@ -10,17 +10,24 @@ public class StationControl extends Controller {
     Logger.info ("RENDER_STATION_PENDING_ID(" + id + ")");
     Station station = Station.findById(id);
     Logger.info ("RENDER_STATION_SUCCESSFUL");
-    render("station.html", station);
+    boolean addReadingError = false;
+    render("station.html", station, addReadingError);
   }
 
   public static void addReading(Long id, int code, double temp, double windSpd, int windDir, int pressure) {
     Logger.info ("ACTION_CREATE_READING_PENDING");
-    Reading reading = new Reading(code, temp, windSpd, windDir, pressure);
     Station station = Station.findById(id);
-    station.readings.add(reading);
-    station.save();
-    Logger.info("ACTION_CREATE_READING_SUCCESSFUL");
-    redirect ("/stations/" + id);
+    if (code == 0 || temp == 0.0 || windSpd == 0.0 || windDir == 0 || pressure == 0) {
+      boolean addReadingError = true;
+      Logger.info ("ACTION_CREATE_READING_REJECTED");
+      render("station.html", station, addReadingError);
+    } else {
+      Reading reading = new Reading(code, temp, windSpd, windDir, pressure);
+      station.readings.add(reading);
+      station.save();
+      Logger.info("ACTION_CREATE_READING_SUCCESSFUL");
+      redirect ("/stations/" + id);
+    }
   }
 
   public static void deleteReading(Long id, Long readingid) {
