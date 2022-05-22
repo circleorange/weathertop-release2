@@ -17,14 +17,12 @@ public class Station extends Model {
   public List<Reading> readings = new ArrayList<Reading>();
 
 
-  // Constructor
   public Station(String stationName, double latitude, double longitude) {
     this.name = stationName;
     this.latitude = latitude;
     this.longitude = longitude;
   }
 
-  // Get the latest readings
   public Reading getLatestReadings() {
     Reading latestReading = null;
     if (readings.size() != 0) {
@@ -38,18 +36,6 @@ public class Station extends Model {
     }
     return latestReading;
   }
-
-  /*
-  // Hash map to link weatherLabel with suitable icon
-  public HashMap<String, String> toWeatherIcon;
-  public void weatherIconMap() {
-    toWeatherIcon.put("Rain", "umbrella icon");
-  }
-
-  public String getWeatherIcon() {
-    weatherIconMap();
-    return toWeatherIcon.get(Reading.weatherLabel);
-  }*/
 
   public double maxTemperature() {
     if (readings.size() == 0) { return 999.99; }
@@ -104,4 +90,6 @@ public class Station extends Model {
     }
     return minPressure.pressure;
   }
+
+
 }

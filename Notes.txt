@@ -21,10 +21,10 @@
 (-) Implement member class
     (y) Create fields for name, email, password, station
     (y) Members can sign up or log in
-    (y) Members can create stations on their account
-(-) Improve design
+    (-) Members can create stations on their account
+(y) Improve design
     (y) Card Icons
-    (-) Fix cards not equal length
+    (y) Fix cards not equal length
 (-) Application deployed
 
 ##Release 3## (labs 12 a,b,c)
@@ -44,3 +44,8 @@
 (-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
 (-) Handle NullPointerException after removing all readings in station or accessing new station with no readings
 (-) Change weather icon depending on the code
+(-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
+(-) Fix cancel button on Settings page
+(-) Handle null values during registration
+(-) Allow users to edit only one field instead of all
+(-) Add successful message for Add Station and Add Reading

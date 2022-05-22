@@ -5,8 +5,8 @@
 # Home page
 GET     /                                           Start.index
 GET     /dashboard                                  Dashboard.index
-GET     /admin                                      Admin.index
 GET     /about                                      About.index
+GET     /settings                                   Accounts.index
 
 GET     /stations/{id}                              StationControl.index
 POST    /stations/{id}/addreading                   StationControl.addReading
@@ -20,6 +20,7 @@ GET     /login                                      Accounts.login
 POST    /register                                   Accounts.register
 POST    /authenticate                               Accounts.authenticate
 GET     /logout                                     Accounts.logout
+POST    /settings/save                              Accounts.updateMember
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
