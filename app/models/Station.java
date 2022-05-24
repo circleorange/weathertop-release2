@@ -99,5 +99,46 @@ public class Station extends Model {
     return minPressure.pressure;
   }
 
-
+  public String getTemperatureTrend(){
+    if (readings.size() >= 3) {
+      int counter = 0;
+      for (int i = 1; i < 3; i++) {
+        Reading rNext = readings.get(readings.size() - i);
+        Reading rPrev = readings.get(readings.size() - 1 - i);
+        if (rNext.temperature > rPrev.temperature) { counter++; }
+        if (rNext.temperature < rPrev.temperature) { counter--; }
+      }
+      if (counter == 2) { return "Increasing"; }
+      else if (counter == -2) { return "Decreasing"; }
+      else { return "No trend"; }
+    } else { return "No trend"; }
+  }
+  public String getWindTrend(){
+    if (readings.size() >= 3) {
+      int counter = 0;
+      for (int i = 1; i < 3; i++) {
+        Reading rNext = readings.get(readings.size() - i);
+        Reading rPrev = readings.get(readings.size() - 1 - i);
+        if (rNext.windSpeed > rPrev.windSpeed) { counter++; }
+        if (rNext.windSpeed < rPrev.windSpeed) { counter--; }
+      }
+      if (counter == 2) { return "Increasing"; }
+      else if (counter == -2) { return "Decreasing"; }
+      else { return "No trend"; }
+    } else { return "No trend"; }
+  }
+  public String getPressureTrend(){
+    if (readings.size() >= 3) {
+      int counter = 0;
+      for (int i = 1; i < 3; i++) {
+        Reading rNext = readings.get(readings.size() - i);
+        Reading rPrev = readings.get(readings.size() - 1 - i);
+        if (rNext.pressure > rPrev.pressure) { counter++; }
+        if (rNext.pressure < rPrev.pressure) { counter--; }
+      }
+      if (counter == 2) { return "Increasing"; }
+      else if (counter == -2) { return "Decreasing"; }
+      else { return "No trend"; }
+    } else { return "No trend"; }
+  }
 }

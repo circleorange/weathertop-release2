@@ -2,6 +2,12 @@
 #{set title: 'Station' /}
 #{menu id: "dashboard" /}
 
+#{if addReadingError}
+<div class="ui red error message">
+  <div class="header">Invalid Reading</div>
+  <p>You can only add new readings if all fields contain correct parameters.</p>
+</div>
+#{/if}
 <section class="ui segment">
   <div class="ui grid">
     <div class="two column row">
@@ -16,12 +22,6 @@
     </div>
   </div>
   #{listReadings station: station /}
-  #{if addReadingError}
-  <div class="ui red error message">
-    <div class="header">Invalid Reading</div>
-    <p>You can only add new readings if all fields contain correct parameters.</p>
-  </div>
-  #{/if}
   #{addreading station: station /}
 </section>
 <div class="ui hidden divider"></div>

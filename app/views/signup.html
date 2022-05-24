@@ -1,33 +1,39 @@
 #{extends 'main.html' /}
 #{set title: 'Signup' /}
-#{welcomemenu id: "singup" /}
+#{welcomemenu id: "signup" /}
 
+#{if registrationError}
+<div class="ui red error message">
+  <div class="header">Registration Failed</div>
+  <p>It looks like some details were missing during the registration. Please try again.</p>
+</div>
+#{/if}
 <div class="ui attached message">
   <div class="header">
     Welcome to WeatherTop Inc!
   </div>
   <p>Fill out the form below to sign-up for a new account</p>
 </div>
-<form class="ui form attached fluid segment">
+<form class="ui form attached fluid segment" action="/register" method="POST">
   <div class="two fields">
     <div class="field">
       <label>First Name</label>
-      <input placeholder="First Name" type="text">
+      <input placeholder="First Name" type="text" name="firstname">
     </div>
     <div class="field">
       <label>Last Name</label>
-      <input placeholder="Last Name" type="text">
+      <input placeholder="Last Name" type="text" name="lastname">
     </div>
   </div>
   <div class="field">
     <label>Email</label>
-    <input placeholder="Email" type="text">
+    <input placeholder="Email" type="text" name="email">
   </div>
   <div class="field">
     <label>Password</label>
-    <input type="password">
+    <input placeholder="Password" type="password" name="password">
   </div>
-  <div class="ui blue submit button">Submit</div>
+  <button class="ui blue submit button">Submit</button>
 </form>
 <div class="ui bottom attached warning message">
   <i class="icon help"></i>

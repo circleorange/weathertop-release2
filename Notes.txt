@@ -2,9 +2,7 @@
 (y) Create field Wind direction in Reading
 (y) Create fields Wind Chill and Wind Compass in Station
 (y) Create conversion methods for the fields
-    (-) Improvement: Refactor conversion methods to return two values for e.g. beaufortScale and beaufortLabel
 (y) Display the new fields on the Dashboard
-    (-) Improvement: Reformat wind chill. Currently, If 6.80 -> Displays 6.8
 (y) Change Dashboard to shows station list (Playlist9b)
 (y) Add button to open each station (Playlist10b)
     (y) Add routes for accessing station
@@ -21,30 +19,36 @@
 (-) Implement member class
     (y) Create fields for name, email, password, station
     (y) Members can sign up or log in
-    (-) Members can create stations on their account
+    (y) Members can create stations on their account
 (y) Improve design
     (y) Card Icons
     (y) Fix cards not equal length
-(-) Application deployed
 
 ##Release 3## (labs 12 a,b,c)
 (y) Include the submission time and date of the readings
-(-) Include trends for 3 consecutive readings for
-    (-) Temperature
-    (-) Wind Speed
-    (-) Pressure
+(y) Change weather icon depending on the code
+(y) Include trends for 3 consecutive readings for
+    (y) Temperature
+    (y) Wind Speed
+    (y) Pressure
 (y) Display cards on the Dashboard page
 (y) Add functionality for members to edit their personal details
 (-) Stations are listed alphabetically
 (y) Github repo
-(-) Deployed
 (y) History tags
+(-) Deployed
 
-##Patches##
-(-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
+##Patch 1##
 (y) Handle NullPointerException after removing all readings in station or accessing new station with no readings
-(-) Change weather icon depending on the code
-(-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
 (y) Handle null values during registration
 (y) Allow users to edit only one field instead of all
-(y) Add successful and error messages for Add Station and Add Reading
+(y) Add successful and error messages for Add Station
+
+##Patch 2##
+(-) Fix validation for StationControl.addReadings method
+(-) Add successful message for Add Reading
+(-) Replace the error catching if statements with Try and Exception
+(-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
+(-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
+(-) Reformat wind chill. Currently, If 6.80 -> Displays 6.8
+(-) Refactor conversion methods to return two values for e.g. beaufortScale and beaufortLabel

@@ -15,7 +15,30 @@
     <div class="ui card" style="height: 100%">
       <div class="content">
         <h3 class="ui header">
+          #{if _station.getLatestReadings()?.weatherLabel == "Clear"}
           <i class="sun icon"></i>
+          #{/if}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Partial Clouds"}
+          <i class="sun icon"></i><i class="cloud icon"></i>
+          #{/elseif}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Cloudy"}
+          <i class="cloud icon"></i>
+          #{/elseif}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Light Showers"}
+          <i class="shower icon"></i>
+          #{/elseif}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Heavy Showers"}
+          <i class="shower icon"></i>
+          #{/elseif}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Rain"}
+          <i class="umbrella icon"></i>
+          #{/elseif}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Snow"}
+          <i class="snowflake icon"></i>
+          #{/elseif}
+          #{elseif _station.getLatestReadings()?.weatherLabel == "Thunder"}
+          <i class="bolt icon"></i>
+          #{/elseif}
           <div class="content">Weather</div><hr>
         </h3>
         <div class="description">${_station.getLatestReadings()?.weatherLabel}</div>
@@ -29,10 +52,19 @@
           <i class="thermometer icon"></i>
           <div class="content">Temperature</div><hr>
         </h3>
-        <div class="description">Currently ${_station.getLatestReadings()?.temperature} C</div>
-        <div class="description">${_station.getLatestReadings()?.tempFahrenheit} F</div><hr>
+        <div class="description">Currently ${_station.getLatestReadings()?.temperature} C / ${_station.getLatestReadings()?.tempFahrenheit} F</div>
+        <hr>
         <div class="description">Max: ${_station.maxTemperature()} C</div>
         <div class="description">Min: ${_station.minTemperature()} C</div>
+        <hr>
+        <div class="description">Trend: ${_station.getTemperatureTrend()}
+          #{if _station.getTemperatureTrend() == "Increasing"}
+          <i class="angle double up icon"></i>
+          #{/if}
+          #{elseif _station.getTemperatureTrend() == "Decreasing"}
+          <i class="angle double down icon"></i>
+          #{/elseif}
+        </div>
       </div>
     </div>
   </div>
@@ -49,6 +81,15 @@
         <div class="description">Wind chill: ${_station.getLatestReadings()?.windChill?.round(1)} C</div>
         <div class="description">Max: ${_station.maxWindSpeed()} km/h</div>
         <div class="description">Min: ${_station.minWindSpeed()} km/h</div>
+        <hr>
+        <div class="description">Trend: ${_station.getWindTrend()}
+          #{if _station.getWindTrend() == "Increasing"}
+          <i class="angle double up icon"></i>
+          #{/if}
+          #{elseif _station.getWindTrend() == "Decreasing"}
+          <i class="angle double down icon"></i>
+          #{/elseif}
+        </div>
       </div>
     </div>
   </div>
@@ -59,9 +100,19 @@
           <i class="expand arrows alternate icon"></i>
           <div class="content">Pressure</div><hr>
         </h3>
-        <div class="description">Currently ${_station.getLatestReadings()?.pressure} hpa</div><hr>
+        <div class="description">Currently ${_station.getLatestReadings()?.pressure} hpa</div>
+        <hr>
         <div class="description">Max: ${_station.maxPressure()} hpa</div>
         <div class="description">Min: ${_station.minPressure()} hpa</div>
+        <hr>
+        <div class="description">Trend: ${_station.getPressureTrend()}
+          #{if _station.getPressureTrend() == "Increasing"}
+          <i class="angle double up icon"></i>
+          #{/if}
+          #{elseif _station.getPressureTrend() == "Decreasing"}
+          <i class="angle double down icon"></i>
+          #{/elseif}
+        </div>
       </div>
     </div>
   </div>

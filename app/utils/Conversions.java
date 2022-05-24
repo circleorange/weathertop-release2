@@ -35,7 +35,7 @@ public class Conversions {
     else if (windSpeed >= 50 && windSpeed <= 61) { return beaufort = 7; }
     else if (windSpeed >= 62 && windSpeed <= 74) { return beaufort = 8; }
     else if (windSpeed >= 75 && windSpeed <= 88) { return beaufort = 9; }
-    else if (windSpeed >= 86 && windSpeed <= 102) { return beaufort = 10; }
+    else if (windSpeed >= 89 && windSpeed <= 102) { return beaufort = 10; }
     else if (windSpeed >= 103 && windSpeed <= 117) { return beaufort = 11; }
     else { return beaufort = 404; }
   }

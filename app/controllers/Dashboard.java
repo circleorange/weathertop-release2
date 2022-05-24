@@ -18,7 +18,7 @@ public class Dashboard extends Controller {
   }
 
   public static void addStation(String name, double latitude, double longitude) {
-    Logger.info ("ACTION_CREATE_STATION_NAME(" + name + ")");
+    Logger.info ("ACTION_CREATE_STATION(" + name + ")");
     Member member = Accounts.getLoggedInUser();
     List<Station> stations = member.stations;
     if (name.isEmpty() || latitude == 0.0 || longitude == 0.0) {

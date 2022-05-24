@@ -40,4 +40,5 @@ public class StationControl extends Controller {
     Logger.info("ACTION_REMOVE_READING_SUCCESSFUL");
     render("station.html", station);
   }
+
 }

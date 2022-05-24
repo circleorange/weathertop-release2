@@ -27,9 +27,16 @@ public class Accounts extends Controller {
   }
   public static void register(String firstname, String lastname, String email, String password) {
     Logger.info("REGISTER_NEW_USER(" + email + ":" + password + ")");
-    Member member = new Member(firstname, lastname, email, password);
-    member.save();
-    redirect("/");
+    if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() || password.isEmpty()) {
+      Logger.info("REGISTER_NEW_USER_FAILED");
+      boolean registrationError = true;
+      render("signup.html", registrationError);
+    } else {
+      Logger.info("REGISTER_NEW_USER_SUCCESSFUL");
+      Member member = new Member(firstname, lastname, email, password);
+      member.save();
+      redirect("/");
+    }
   }
   public static void authenticate(String email, String password) {
     Logger.info("LOGIN_AUTHENTICATION_CHECK("+ email + ":" + password + ")");
