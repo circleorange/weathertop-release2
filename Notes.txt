@@ -12,17 +12,19 @@
     (y) Handle errors with new stations having null values upon creation
 (y) Create Github repository
 
+
 ##Release 2##
 (y) Include Latitude and Longitude for Station
     (y) Add extra fields to station creation form
 (y) Calculate and display Min Max temperature, wind speed, and pressure values
-(-) Implement member class
+(y) Implement member class
     (y) Create fields for name, email, password, station
     (y) Members can sign up or log in
     (y) Members can create stations on their account
 (y) Improve design
     (y) Card Icons
     (y) Fix cards not equal length
+
 
 ##Release 3## (labs 12 a,b,c)
 (y) Include the submission time and date of the readings
@@ -33,10 +35,10 @@
     (y) Pressure
 (y) Display cards on the Dashboard page
 (y) Add functionality for members to edit their personal details
-(-) Stations are listed alphabetically
+(y) Stations are listed alphabetically
 (y) Github repo
 (y) History tags
-(-) Deployed
+
 
 ##Patch 1##
 (y) Handle NullPointerException after removing all readings in station or accessing new station with no readings
@@ -44,11 +46,25 @@
 (y) Allow users to edit only one field instead of all
 (y) Add successful and error messages for Add Station
 
+
 ##Patch 2##
-(-) Fix validation for StationControl.addReadings method
-(-) Add successful message for Add Reading
+(y) Fix validation for StationControl.addReadings method
+(y) Add successful message for Add Reading
+
+
+##Release 3 - Frontend Improvements##
+(-) Improve Start page
+(-) Add logo on the Login page
+(-) Improve About page
+
+
+#Release 3 - Completion##
+(-) Deployment
+
+
+##Patch 3##
 (-) Replace the error catching if statements with Try and Exception
-(-) Refactor getLatestReadings - have separate return methods for each latest reading to remove all the unnecessary clutter in Reading class
 (-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
 (-) Reformat wind chill. Currently, If 6.80 -> Displays 6.8
 (-) Refactor conversion methods to return two values for e.g. beaufortScale and beaufortLabel
+(-) Prevent registration using the same email

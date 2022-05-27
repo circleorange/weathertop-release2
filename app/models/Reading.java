@@ -15,7 +15,7 @@ public class Reading extends Model {
   public String date;
 
   public static String weatherLabel;
-  public static double tempFahrenheit;
+  public static double fahrenheit;
   public static int beaufortScale;
   public static String beaufortLabel;
   public static String compassDirection;

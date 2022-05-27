@@ -2,8 +2,6 @@ package utils;
 
 import models.Reading;
 
-import java.util.HashMap;
-
 public class Conversions {
   public static String toWeatherLabel(int weatherCode) {
     String weatherType = "";
@@ -17,12 +15,10 @@ public class Conversions {
     else if (weatherCode == 800) { return weatherType = "Thunder"; }
     else { return weatherType = "INVALID_WEATHER_CODE"; }
   }
-
   public static double toFahrenheit(double celsius) {
     double fahrenheit = celsius * (9/5) + 32;
     return fahrenheit;
   }
-
   public static int toBeaufortScale(double windSpeed) {
     int beaufort = 0;
     if (windSpeed == 1) { return beaufort = 1; }
@@ -39,10 +35,8 @@ public class Conversions {
     else if (windSpeed >= 103 && windSpeed <= 117) { return beaufort = 11; }
     else { return beaufort = 404; }
   }
-
   public static String toBeaufortLabel(int beaufort) {
     int beaufortScale = Reading.beaufortScale;
-    //beaufortScale = Reading.windBeaufort;
     if (beaufortScale  == 0) { return "Calm"; }
     else if (beaufortScale  == 1) { return "Light Air"; }
     else if (beaufortScale  == 2) { return "Light Breeze"; }
@@ -57,7 +51,6 @@ public class Conversions {
     else if (beaufortScale  == 11) { return "Violent Storm"; }
     else { return "OUT_OF_RANGE_BEAUFORT_SCALE"; }
   }
-
   public static String toCompassDirection(double windDirection) {
     double windDir = windDirection;
     if (windDir > 348.75 && windDir <= 11.25) { return "N"; }
@@ -78,7 +71,6 @@ public class Conversions {
     else if (windDir > 326.25 && windDir <= 348.75) { return "NNW"; }
     else { return "INVALID_COMPASS_DIRECTION"; }
   }
-
   public static double toWindChill(double tempC, double windKM) {
     double windChill = 13.12 + 0.6215*tempC - 11.37*(Math.pow(windKM, 0.16)) + 0.3965*tempC*(Math.pow(windKM, 0.16));
     return windChill;

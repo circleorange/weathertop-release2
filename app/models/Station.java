@@ -1,11 +1,9 @@
 package models;
 
-import play.Logger;
 import play.db.jpa.Model;
 import utils.Conversions;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+
+import javax.persistence.*;
 import java.util.*;
 
 @Entity
@@ -16,18 +14,16 @@ public class Station extends Model {
   @OneToMany(cascade = CascadeType.ALL)
   public List<Reading> readings = new ArrayList<Reading>();
 
-
   public Station(String stationName, double latitude, double longitude) {
     this.name = stationName;
     this.latitude = latitude;
     this.longitude = longitude;
   }
-
   public Reading getLatestReadings() {
     Reading latestReading = null;
     if (readings.size() != 0) {
       latestReading = readings.get(readings.size() - 1);
-      Reading.tempFahrenheit = Conversions.toFahrenheit(latestReading.temperature);
+      Reading.fahrenheit = Conversions.toFahrenheit(latestReading.temperature);
       Reading.weatherLabel = Conversions.toWeatherLabel(latestReading.code);
       Reading.beaufortScale = Conversions.toBeaufortScale(latestReading.windSpeed);
       Reading.beaufortLabel = Conversions.toBeaufortLabel(Reading.beaufortScale);
@@ -36,15 +32,10 @@ public class Station extends Model {
     }
     return latestReading;
   }
-
   public boolean isNotEmpty() {
-    if (readings.size() == 0) {
-      return false;
-    } else {
-      return true;
-    }
+    if (readings.size() == 0) { return false; }
+    else { return true; }
   }
-
   public double maxTemperature() {
     if (readings.size() == 0) { return 999.99; }
     Reading maxTemperature = readings.get(0);
@@ -53,7 +44,6 @@ public class Station extends Model {
     }
     return maxTemperature.temperature;
   }
-
   public double minTemperature() {
     if (readings.size() == 0) { return 0.01; }
     Reading minTemperature = readings.get(0);
@@ -62,7 +52,6 @@ public class Station extends Model {
     }
     return minTemperature.temperature;
   }
-
   public double maxWindSpeed() {
     if (readings.size() == 0) { return 999.99; }
     Reading maxWindSpeed = readings.get(0);
@@ -71,7 +60,6 @@ public class Station extends Model {
     }
     return maxWindSpeed.windSpeed;
   }
-
   public double minWindSpeed() {
     if (readings.size() == 0) { return 0.01; }
     Reading minWindSpeed = readings.get(0);
@@ -80,7 +68,6 @@ public class Station extends Model {
     }
     return minWindSpeed.windSpeed;
   }
-
   public int maxPressure() {
     if (readings.size() == 0) { return 999; }
     Reading maxPressure = readings.get(0);
@@ -89,7 +76,6 @@ public class Station extends Model {
     }
     return maxPressure.pressure;
   }
-
   public int minPressure() {
     if (readings.size() == 0) { return 0; }
     Reading minPressure = readings.get(0);
