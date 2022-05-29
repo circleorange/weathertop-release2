@@ -14,8 +14,8 @@ public class Reading extends Model {
   public int windDirection;
   public int pressure;
   public Date date;
-  private String dateYear;
-  private String dateHour;
+  public String dateYear;
+  public String dateHour;
 
   public static String weatherLabel;
   public static double fahrenheit;
@@ -30,7 +30,6 @@ public class Reading extends Model {
     this.windSpeed = windSpeed;
     this.windDirection = windDirection;
     this.pressure = pressure;
-    Date date = new Date();
     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
     this.dateYear = sdf1.format(date);

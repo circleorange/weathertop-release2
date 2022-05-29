@@ -10,6 +10,14 @@
   <p>You may now proceed with the login to access your personal stations.</p>
 </div>
 #{/if}
+#{if authenticationFailed}
+<div class="ui red error message">
+  <div class="header">
+    Login Failed
+  </div>
+  <p>The entered email does not match the password. Please try again.</p>
+</div>
+#{/if}
 <div class="ui attached message">
   <div class="header">
     Welcome back to WeatherTop Inc!

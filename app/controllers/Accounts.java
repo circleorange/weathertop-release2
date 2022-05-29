@@ -53,8 +53,9 @@ public class Accounts extends Controller {
       session.put("LOGGED_IN_USER_ID", member.id); // Assign cookie to user
       redirect("/dashboard");
     } else {
+      boolean authenticationFailed = true;
       Logger.info("LOGIN_AUTHENTICATION_FAILED");
-      redirect("/");
+      render("login.html", authenticationFailed);;
     }
   }
 
@@ -81,6 +82,10 @@ public class Accounts extends Controller {
       member.email = email;
     } else if (firstname.isEmpty() && lastname.isEmpty() && email.isEmpty() && !password.isEmpty()) {
       member.password = password;
+    } else if (!firstname.isEmpty() && lastname.isEmpty() && email.isEmpty() && password.isEmpty()) {
+      member.firstname = firstname;
+    } else if (firstname.isEmpty() && !lastname.isEmpty() && email.isEmpty() && password.isEmpty()) {
+      member.lastname = lastname;
     } else if (!firstname.isEmpty() && !lastname.isEmpty() && email.isEmpty() && password.isEmpty()) {
       member.firstname = firstname;
       member.lastname = lastname;

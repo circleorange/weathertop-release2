@@ -62,12 +62,13 @@
 
 
 ##Patch 3##
-(-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
-(-) Display message for incorrect attempt to log in
-(-) After successful sign up redirect to login page and display message to log in
+(y) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
+(y) Display message for incorrect attempt to log in
+(y) After successful sign up redirect to login page and display message to log in
+
+
+##Not Patched##
 (-) Prevent same station name
 (-) Prevent registration using already registered email
-
 (-) Replace the error catching if statements with Try and Exception
 (-) Reformat wind chill. Currently, If 6.80 -> Displays 6.8
-(-) Refactor conversion methods to return two values for e.g. beaufortScale and beaufortLabel

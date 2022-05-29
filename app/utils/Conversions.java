@@ -75,6 +75,4 @@ public class Conversions {
     double windChill = 13.12 + 0.6215*tempC - 11.37*(Math.pow(windKM, 0.16)) + 0.3965*tempC*(Math.pow(windKM, 0.16));
     return windChill;
   }
-
-
 }
