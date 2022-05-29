@@ -133,16 +133,10 @@ public class Station extends Model {
           counter--;
         }
       }
-      if (counter == 2) {
-        return "Increasing";
-      } else if (counter == -2) {
-        return "Decreasing";
-      } else {
-        return "No trend";
-      }
-    } else {
-      return "No trend";
-    }
+      if (counter == 2) { return "Increasing"; }
+      else if (counter == -2) { return "Decreasing"; }
+      else { return "No trend"; }
+    } else { return "No trend"; }
   }
 
   public String getWindTrend() {
@@ -151,23 +145,13 @@ public class Station extends Model {
       for (int i = 1; i < 3; i++) {
         Reading rNext = readings.get(readings.size() - i);
         Reading rPrev = readings.get(readings.size() - 1 - i);
-        if (rNext.windSpeed > rPrev.windSpeed) {
-          counter++;
-        }
-        if (rNext.windSpeed < rPrev.windSpeed) {
-          counter--;
-        }
+        if (rNext.windSpeed > rPrev.windSpeed) { counter++; }
+        if (rNext.windSpeed < rPrev.windSpeed) { counter--; }
       }
-      if (counter == 2) {
-        return "Increasing";
-      } else if (counter == -2) {
-        return "Decreasing";
-      } else {
-        return "No trend";
-      }
-    } else {
-      return "No trend";
-    }
+      if (counter == 2) { return "Increasing";}
+      else if (counter == -2) { return "Decreasing"; }
+      else { return "No trend"; }
+    } else { return "No trend"; }
   }
 
   public String getPressureTrend() {
@@ -176,22 +160,12 @@ public class Station extends Model {
       for (int i = 1; i < 3; i++) {
         Reading rNext = readings.get(readings.size() - i);
         Reading rPrev = readings.get(readings.size() - 1 - i);
-        if (rNext.pressure > rPrev.pressure) {
-          counter++;
-        }
-        if (rNext.pressure < rPrev.pressure) {
-          counter--;
-        }
+        if (rNext.pressure > rPrev.pressure) { counter++; }
+        if (rNext.pressure < rPrev.pressure) { counter--; }
       }
-      if (counter == 2) {
-        return "Increasing";
-      } else if (counter == -2) {
-        return "Decreasing";
-      } else {
-        return "No trend";
-      }
-    } else {
-      return "No trend";
-    }
+      if (counter == 2) { return "Increasing"; }
+      else if (counter == -2) { return "Decreasing"; }
+      else { return "No trend"; }
+    } else { return "No trend"; }
   }
 }

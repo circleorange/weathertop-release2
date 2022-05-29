@@ -30,6 +30,7 @@ public class Reading extends Model {
     this.windSpeed = windSpeed;
     this.windDirection = windDirection;
     this.pressure = pressure;
+    Date date = new Date();
     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
     this.dateYear = sdf1.format(date);
