@@ -28,6 +28,11 @@ public class Member extends Model {
   }
 
   // find method from play framework
-  public static Member findByEmail(String email) { return find("email", email).first(); }
-  public boolean checkPassword(String pwd) { return this.password.equals(pwd); }
+  public static Member findByEmail(String email) {
+    return find("email", email).first();
+  }
+
+  public boolean checkPassword(String pwd) {
+    return this.password.equals(pwd);
+  }
 }

@@ -5,21 +5,21 @@ import models.Station;
 import play.Logger;
 import play.mvc.Controller;
 
-import javax.persistence.OrderBy;
 import java.util.List;
 
 public class Dashboard extends Controller {
   public static void index() {
     Logger.info("RENDER_DASHBOARD_PENDING");
     Member member = Accounts.getLoggedInUser();
-    List<Station> stations = member.stations ;
+    List<Station> stations = member.stations;
     boolean addStationError = false;
     boolean addStationSuccessful = false;
     Logger.info("RENDER_DASHBOARD_SUCCESSFUL");
     render("dashboard.html", stations, addStationError, addStationSuccessful);
   }
+
   public static void addStation(String name, double latitude, double longitude) {
-    Logger.info ("ACTION_CREATE_STATION(" + name + ")");
+    Logger.info("ACTION_CREATE_STATION(" + name + ")");
     Member member = Accounts.getLoggedInUser();
     List<Station> stations = member.stations;
     if (name.isEmpty()) {
@@ -35,8 +35,9 @@ public class Dashboard extends Controller {
       render("dashboard.html", stations, addStationSuccessful);
     }
   }
+
   public static void deleteStation(Long id) {
-    Logger.info ("ACTION_DELETE_STATION_PENDING_ID(" + id + ")");
+    Logger.info("ACTION_DELETE_STATION_PENDING_ID(" + id + ")");
     Member member = Accounts.getLoggedInUser();
     Station station = Station.findById(id);
     member.stations.remove(station);

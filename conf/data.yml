@@ -47,10 +47,10 @@ Station(s2):
     - r4
 
 Member(m1):
-  email: piotrbielski3@gmail.com
-  password: pwd
-  firstname: Piotr
-  lastname: Bielski
+  email: homer@simpson.com
+  password: secret
+  firstname: Homer
+  lastname: Simpson
   stations:
     - s1
     - s2
