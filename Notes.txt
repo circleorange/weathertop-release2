@@ -52,10 +52,9 @@
 (y) Add successful message for Add Reading
 
 
-##Release 3 - Frontend Improvements##
-(-) Improve Start page
-(-) Add logo on the Login page
-(-) Improve About page
+##Release 3 - Improvements##
+(y) Improve Start page
+(y) Improve About page
 
 
 #Release 3 - Completion##
@@ -63,8 +62,12 @@
 
 
 ##Patch 3##
-(-) Replace the error catching if statements with Try and Exception
 (-) Either fix timestamp format from ISO to String or make all timestamps ISO format to keep it consistent
+(-) Display message for incorrect attempt to log in
+(-) After successful sign up redirect to login page and display message to log in
+(-) Prevent same station name
+(-) Prevent registration using already registered email
+
+(-) Replace the error catching if statements with Try and Exception
 (-) Reformat wind chill. Currently, If 6.80 -> Displays 6.8
 (-) Refactor conversion methods to return two values for e.g. beaufortScale and beaufortLabel
-(-) Prevent registration using the same email

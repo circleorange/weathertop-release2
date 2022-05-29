@@ -35,7 +35,7 @@ public class Accounts extends Controller {
       Logger.info("REGISTER_NEW_USER_SUCCESSFUL");
       Member member = new Member(firstname, lastname, email, password);
       member.save();
-      redirect("/");
+      redirect("/login");
     }
   }
   public static void authenticate(String email, String password) {
@@ -58,7 +58,6 @@ public class Accounts extends Controller {
     } else { login(); }
     return member;
   }
-
   public void updateMember(String firstname, String lastname, String email, String password) {
     Logger.info("ACTION_UPDATE_MEMBER_PENDING");
     Member member = Accounts.getLoggedInUser();

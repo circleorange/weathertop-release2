@@ -2,6 +2,12 @@
 #{set title: 'Settings' /}
 #{menu id: "settings" /}
 
+#{if updateSuccessful}
+<div class="ui success message">
+  <div class="header">Update Complete</div>
+  <p>You're account details have been successfully updated.</p>
+</div>
+#{/if}
 #{if updateFailed}
 <div class="ui red negative message">
   <div class="header">
@@ -35,12 +41,6 @@
     <label>Password</label>
     <input placeholder="${member.password}" type="password" name="password">
   </div>
-  #{if updateSuccessful}
-  <div class="ui success message">
-    <div class="header">Update Complete</div>
-    <p>You're account details have been successfully updated.</p>
-  </div>
-  #{/if}
   <button class="ui positive submit button">Save</button>
 </form>
 
