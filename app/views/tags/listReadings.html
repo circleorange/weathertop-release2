@@ -1,30 +1,38 @@
 <table class="ui fixed table">
   <thead>
-    <tr>
-      <th>Timestamp</th>
-      <th>Code</th>
-      <th>Temperature</th>
-      <th>Wind Speed</th>
-      <th>Wind Direction</th>
-      <th>Pressure</th>
-      <th>Action</th>
-    </tr>
+  <tr>
+    <th>Timestamp</th>
+    <th>Code</th>
+    <th>Temperature</th>
+    <th>Wind Speed</th>
+    <th>Wind Direction</th>
+    <th>Pressure</th>
+    <th>Action</th>
+  </tr>
   </thead>
   <tbody>
-    #{list items:_station.readings, as:'reading'}
-    <tr>
-      <td>${reading.date}</td>
-      <td>${reading.code}</td>
-      <td>${reading.temperature}</td>
-      <td>${reading.windSpeed}</td>
-      <td>${reading.windDirection}</td>
-      <td>${reading.pressure}</td>
-      <td>
-        <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui red icon button">
-          <i class="icon trash"></i> Delete
-        </a>
-      </td>
-    </tr>
-    #{/list}
+  #{list items:_station.readings, as:'reading'}
+  <tr>
+    <td>
+      #{if reading.date == null}
+      ${reading.dateYear}<br>
+      ${reading.dateHour}
+      #{/if}
+      #{else}
+      ${reading.date}
+      #{/else}
+    </td>
+    <td>${reading.code}</td>
+    <td>${reading.temperature}</td>
+    <td>${reading.windSpeed}</td>
+    <td>${reading.windDirection}</td>
+    <td>${reading.pressure}</td>
+    <td>
+      <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui red icon button">
+        <i class="icon trash"></i> Delete
+      </a>
+    </td>
+  </tr>
+  #{/list}
   </tbody>
 </table>

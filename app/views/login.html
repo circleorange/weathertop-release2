@@ -2,6 +2,14 @@
 #{set title: 'Login' /}
 #{welcomemenu id: "login" /}
 
+#{if registrationSuccessful}
+<div class="ui success message">
+  <div class="header">
+    Your new account has been successfully created
+  </div>
+  <p>You may now proceed with the login to access your personal stations.</p>
+</div>
+#{/if}
 <div class="ui attached message">
   <div class="header">
     Welcome back to WeatherTop Inc!
@@ -20,7 +28,7 @@
           </div>
           <div class="field">
             <label>Password</label>
-            <input type="password" name="password">
+            <input placeholder="Password" type="password" name="password">
           </div>
           <button class="ui blue submit button">Sign in</button>
         </form>

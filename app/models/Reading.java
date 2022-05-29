@@ -2,8 +2,8 @@ package models;
 
 import play.db.jpa.Model;
 import javax.persistence.Entity;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class Reading extends Model {
@@ -12,7 +12,9 @@ public class Reading extends Model {
   public double windSpeed;
   public int windDirection;
   public int pressure;
-  public String date;
+  public Date date;
+  private String dateYear;
+  private String dateHour;
 
   public static String weatherLabel;
   public static double fahrenheit;
@@ -21,20 +23,16 @@ public class Reading extends Model {
   public static String compassDirection;
   public static double windChill;
 
-  // Constructor
   public Reading(int code, double temp, double windSpeed, int windDirection, int pressure) {
     this.code = code;
     this.temperature = temp;
     this.windSpeed = windSpeed;
     this.windDirection = windDirection;
     this.pressure = pressure;
-    dateToString();
+    Date date = new Date();
+    SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
+    this.dateYear = sdf1.format(date);
+    this.dateHour = sdf2.format(date);
   }
-
-  public void dateToString() {
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    LocalDateTime ldt = LocalDateTime.now();
-    this.date = dtf.format(ldt);
-  }
-
 }

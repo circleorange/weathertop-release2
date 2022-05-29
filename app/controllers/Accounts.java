@@ -18,6 +18,7 @@ public class Accounts extends Controller {
   }
   public static void login() {
     Logger.info("RENDER_LOGIN_PAGE");
+    boolean registrationSuccessful = false;
     render("login.html");
   }
   public static void logout() {
@@ -29,13 +30,14 @@ public class Accounts extends Controller {
     Logger.info("REGISTER_NEW_USER(" + email + ":" + password + ")");
     if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() || password.isEmpty()) {
       Logger.info("REGISTER_NEW_USER_FAILED");
-      boolean registrationError = true;
-      render("signup.html", registrationError);
+      boolean registrationFailed = true;
+      render("signup.html", registrationFailed);
     } else {
       Logger.info("REGISTER_NEW_USER_SUCCESSFUL");
       Member member = new Member(firstname, lastname, email, password);
       member.save();
-      redirect("/login");
+      boolean registrationSuccessful = true;
+      render("login.html", registrationSuccessful);
     }
   }
   public static void authenticate(String email, String password) {

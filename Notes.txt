@@ -58,7 +58,7 @@
 
 
 #Release 3 - Completion##
-(-) Deployment
+(y) Deployment
 
 
 ##Patch 3##
